@@ -13,9 +13,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
+    let sim_ctl = SimCtl()
+
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        sim_ctl.start()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
