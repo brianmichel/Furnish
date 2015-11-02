@@ -16,6 +16,7 @@
 		724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB131BE68578009E80B1 /* SimCtlListResponse.swift */; };
 		724EDB1A1BE69107009E80B1 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB191BE69107009E80B1 /* Runtime.swift */; };
 		724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB1B1BE691CF009E80B1 /* Device.swift */; };
+		724EDB1E1BE6C9A7009E80B1 /* TaskOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		724EDB131BE68578009E80B1 /* SimCtlListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimCtlListResponse.swift; path = Classes/SimCtlListResponse.swift; sourceTree = "<group>"; };
 		724EDB191BE69107009E80B1 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Classes/Runtime.swift; sourceTree = "<group>"; };
 		724EDB1B1BE691CF009E80B1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Classes/Device.swift; sourceTree = "<group>"; };
+		724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskOperations.swift; path = Classes/TaskOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				724EDB181BE690FB009E80B1 /* Models */,
 				724EDB121BE68566009E80B1 /* Responses */,
 				724EDB101BE67653009E80B1 /* SimCtl.swift */,
+				724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */,
 			);
 			name = "simctl wrapper";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				724EDB1A1BE69107009E80B1 /* Runtime.swift in Sources */,
 				724EDAE71BE67175009E80B1 /* AppDelegate.swift in Sources */,
+				724EDB1E1BE6C9A7009E80B1 /* TaskOperations.swift in Sources */,
 				724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */,
 				724EDB111BE67653009E80B1 /* SimCtl.swift in Sources */,
 				724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */,

@@ -29,15 +29,15 @@ public class SimCtl {
                     return;
                 }
 
-                let components = string.componentsSeparatedByString("\n")
+                let response = SimCtlListResponse(output: string);
 
-                let response = SimCtlListResponse(output: components);
-
-                let iPhone6Devices = response.devices.filter({ (device) -> Bool in
-                    return device.name == "iPhone 6"
+                let device = response.devices.filter({ (device) -> Bool in
+                    return device.os.version == "8.4" && device.name.containsString("iPhone")
                 })
 
-                print("Output: \(components)")
+                print("Found device(s): \(device)")
+
+                print("Response: \(response)")
             }
         }
     }

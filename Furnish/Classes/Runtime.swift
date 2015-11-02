@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Runtime {
+struct Runtime {
     enum Type: Int {
         case Unknown = -1
         case iOS

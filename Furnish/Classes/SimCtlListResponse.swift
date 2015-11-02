@@ -24,8 +24,9 @@ class SimCtlListResponse {
 
     var lastDeviceBucket: String?
 
-    init(output: Array<String>) {
-        processOutput(output)
+    init(output: String) {
+        let components = output.componentsSeparatedByString("\n")
+        processOutput(components)
     }
 
     private func processOutput(output: Array<String>) {
