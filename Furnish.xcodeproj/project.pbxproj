@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720DF9011BF783E9003232A2 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */; };
+		720DF9031BF78496003232A2 /* SimCtlOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9021BF78496003232A2 /* SimCtlOperations.swift */; };
 		724EDAE71BE67175009E80B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDAE61BE67175009E80B1 /* AppDelegate.swift */; };
 		724EDAE91BE67175009E80B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724EDAE81BE67175009E80B1 /* Assets.xcassets */; };
 		724EDAEC1BE67175009E80B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 724EDAEA1BE67175009E80B1 /* MainMenu.xib */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationCoordinator.swift; path = Classes/ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		720DF9021BF78496003232A2 /* SimCtlOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCtlOperations.swift; sourceTree = "<group>"; };
 		724EDAE31BE67175009E80B1 /* Furnish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		724EDAE61BE67175009E80B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		724EDAE81BE67175009E80B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		720DF8FF1BF783DD003232A2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		723C7B271BEE86A600188FEA /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */,
+				720DF9021BF78496003232A2 /* SimCtlOperations.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		724EDADA1BE67175009E80B1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +124,9 @@
 		724EDAE51BE67175009E80B1 /* Furnish */ = {
 			isa = PBXGroup;
 			children = (
+				720DF8FF1BF783DD003232A2 /* Coordinator */,
+				724EDB181BE690FB009E80B1 /* Models */,
+				723C7B271BEE86A600188FEA /* Operations */,
 				724EDB0F1BE67639009E80B1 /* simctl wrapper */,
 				724EDAE61BE67175009E80B1 /* AppDelegate.swift */,
 				724EDAE81BE67175009E80B1 /* Assets.xcassets */,
@@ -133,10 +157,8 @@
 		724EDB0F1BE67639009E80B1 /* simctl wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				724EDB181BE690FB009E80B1 /* Models */,
 				724EDB121BE68566009E80B1 /* Responses */,
 				724EDB101BE67653009E80B1 /* SimCtl.swift */,
-				724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */,
 			);
 			name = "simctl wrapper";
 			sourceTree = "<group>";
@@ -289,11 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				724EDB1A1BE69107009E80B1 /* Runtime.swift in Sources */,
+				720DF9031BF78496003232A2 /* SimCtlOperations.swift in Sources */,
 				724EDAE71BE67175009E80B1 /* AppDelegate.swift in Sources */,
 				724EDB1E1BE6C9A7009E80B1 /* TaskOperations.swift in Sources */,
 				724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */,
 				724EDB111BE67653009E80B1 /* SimCtl.swift in Sources */,
 				724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */,
+				720DF9011BF783E9003232A2 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +541,7 @@
 				724EDB081BE67175009E80B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		724EDB091BE67175009E80B1 /* Build configuration list for PBXNativeTarget "FurnishTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +550,7 @@
 				724EDB0B1BE67175009E80B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		724EDB0C1BE67175009E80B1 /* Build configuration list for PBXNativeTarget "FurnishUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +559,7 @@
 				724EDB0E1BE67175009E80B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

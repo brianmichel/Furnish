@@ -9,50 +9,30 @@
 import Foundation
 
 public class SimCtl {
-    let outputPipe = NSPipe()
-    var baseTask = NSTask()
-
-    var temporaryOutputBuffer: NSMutableData?
-
+    let listTask: ReadOnlyTaskOperation?
     init() {
-        baseTask.standardOutput = outputPipe
-        baseTask.launchPath = "/usr/bin/xcrun"
-        baseTask.arguments = ["simctl", "list"]
-
-        self.outputPipe.fileHandleForReading.readabilityHandler = { (handle: NSFileHandle) -> Void in
-            self.appendDataToTemporaryBuffer(handle.availableData)
-        }
-
-        self.baseTask.terminationHandler = { (task: NSTask) -> Void in
-            if let buffer = self.temporaryOutputBuffer {
-                guard let string = String(data: buffer, encoding: NSUTF8StringEncoding) else {
-                    return;
-                }
-
-                let response = SimCtlListResponse(output: string);
-
-                let device = response.devices.filter({ (device) -> Bool in
-                    return device.os.version == "8.4" && device.name.containsString("iPhone")
-                })
-
-                print("Found device(s): \(device)")
-
-                print("Response: \(response)")
+        listTask = SimCtlOperations.list { (task: NSTask, data: NSMutableData?) -> Void in
+            guard let
+                buffer = data,
+                string = String(data: buffer, encoding: NSUTF8StringEncoding) else {
+                return
             }
+
+            let response = SimCtlListResponse(output: string)
+
+            let device = response.devices.filter({ (device) -> Bool in
+                return device.os.version == "8.4" && device.name.containsString("iPhone")
+            })
+
+            print("Response: \(response) - \(device)")
         }
     }
 
     func start() {
-        guard !baseTask.running else { return }
+        guard let task = listTask where task.executing != true else {
+            return
+        }
 
-        baseTask.launch()
-    }
-
-    func appendDataToTemporaryBuffer(data: NSData) {
-        let buffer = self.temporaryOutputBuffer ?? NSMutableData()
-
-        buffer.appendData(data)
-
-        self.temporaryOutputBuffer = buffer
+        NSOperationQueue.mainQueue().addOperation(task)
     }
 }
