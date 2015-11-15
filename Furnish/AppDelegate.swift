@@ -21,11 +21,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         sim_ctl.start()
 
-        let task = SimCtlOperations.install(path: "~/Library/Developer/Xcode/DerivedData/Orangina-fxlmalmfvzgjlsbadupjkptfhtmx/Build/Products/Debug-iphonesimulator/Orangina.app") { (task, data: NSMutableData?) -> Void in
-            print("GOT SOMETHING: \(task)")
-        }
-
-        queue.addOperation(task)
+//        let task = SimCtlOperations.install(path: "~/Library/Developer/Xcode/DerivedData/Orangina-fxlmalmfvzgjlsbadupjkptfhtmx/Build/Products/Debug-iphonesimulator/Orangina.app") { (task, data: NSMutableData?) -> Void in
+//        }
+//
+//        queue.addOperation(task)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

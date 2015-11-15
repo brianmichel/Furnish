@@ -686,6 +686,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="launchSimulator:" target="l6E-at-7t0" id="N7f-cn-B3S"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-js-rcM">
                                 <rect key="frame" x="129" y="-7" width="148" height="32"/>
@@ -694,6 +697,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="installApplication:" target="l6E-at-7t0" id="atG-FS-WXk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

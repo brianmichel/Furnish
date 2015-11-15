@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		720DF9011BF783E9003232A2 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */; };
-		720DF9031BF78496003232A2 /* SimCtlOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9021BF78496003232A2 /* SimCtlOperations.swift */; };
+		720DF9031BF78496003232A2 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9021BF78496003232A2 /* Operations.swift */; };
+		720DF9051BF8E349003232A2 /* DeviceSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9041BF8E349003232A2 /* DeviceSelectionCoordinator.swift */; };
+		720DF9081BF8E6A2003232A2 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9071BF8E6A2003232A2 /* DeviceListViewController.swift */; };
+		720DF90B1BF8E6FF003232A2 /* DeviceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720DF90A1BF8E6FF003232A2 /* DeviceListView.xib */; };
+		720DF90D1BF8F395003232A2 /* DeviceListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF90C1BF8F395003232A2 /* DeviceListCellView.swift */; };
+		720DF90F1BF8F683003232A2 /* DeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720DF90E1BF8F683003232A2 /* DeviceListCell.xib */; };
+		720DF9111BF8F853003232A2 /* AppInstallationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720DF9101BF8F853003232A2 /* AppInstallationCoordinator.swift */; };
 		724EDAE71BE67175009E80B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDAE61BE67175009E80B1 /* AppDelegate.swift */; };
 		724EDAE91BE67175009E80B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724EDAE81BE67175009E80B1 /* Assets.xcassets */; };
 		724EDAEC1BE67175009E80B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 724EDAEA1BE67175009E80B1 /* MainMenu.xib */; };
@@ -40,7 +46,13 @@
 
 /* Begin PBXFileReference section */
 		720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationCoordinator.swift; path = Classes/ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		720DF9021BF78496003232A2 /* SimCtlOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCtlOperations.swift; sourceTree = "<group>"; };
+		720DF9021BF78496003232A2 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		720DF9041BF8E349003232A2 /* DeviceSelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceSelectionCoordinator.swift; path = Classes/DeviceSelectionCoordinator.swift; sourceTree = "<group>"; };
+		720DF9071BF8E6A2003232A2 /* DeviceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceListViewController.swift; path = Classes/DeviceListViewController.swift; sourceTree = "<group>"; };
+		720DF90A1BF8E6FF003232A2 /* DeviceListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeviceListView.xib; path = Resources/Nibs/DeviceListView.xib; sourceTree = "<group>"; };
+		720DF90C1BF8F395003232A2 /* DeviceListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceListCellView.swift; path = Classes/DeviceListCellView.swift; sourceTree = "<group>"; };
+		720DF90E1BF8F683003232A2 /* DeviceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeviceListCell.xib; path = Resources/Nibs/DeviceListCell.xib; sourceTree = "<group>"; };
+		720DF9101BF8F853003232A2 /* AppInstallationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInstallationCoordinator.swift; path = Classes/AppInstallationCoordinator.swift; sourceTree = "<group>"; };
 		724EDAE31BE67175009E80B1 /* Furnish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Furnish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		724EDAE61BE67175009E80B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		724EDAE81BE67175009E80B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,15 +100,36 @@
 			isa = PBXGroup;
 			children = (
 				720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */,
+				720DF9041BF8E349003232A2 /* DeviceSelectionCoordinator.swift */,
+				720DF9101BF8F853003232A2 /* AppInstallationCoordinator.swift */,
 			);
 			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		720DF9061BF8E686003232A2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				720DF9091BF8E6D0003232A2 /* Device List */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		720DF9091BF8E6D0003232A2 /* Device List */ = {
+			isa = PBXGroup;
+			children = (
+				720DF9071BF8E6A2003232A2 /* DeviceListViewController.swift */,
+				720DF90A1BF8E6FF003232A2 /* DeviceListView.xib */,
+				720DF90C1BF8F395003232A2 /* DeviceListCellView.swift */,
+				720DF90E1BF8F683003232A2 /* DeviceListCell.xib */,
+			);
+			name = "Device List";
 			sourceTree = "<group>";
 		};
 		723C7B271BEE86A600188FEA /* Operations */ = {
 			isa = PBXGroup;
 			children = (
 				724EDB1D1BE6C9A7009E80B1 /* TaskOperations.swift */,
-				720DF9021BF78496003232A2 /* SimCtlOperations.swift */,
+				720DF9021BF78496003232A2 /* Operations.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -124,6 +157,7 @@
 		724EDAE51BE67175009E80B1 /* Furnish */ = {
 			isa = PBXGroup;
 			children = (
+				720DF9061BF8E686003232A2 /* View Controllers */,
 				720DF8FF1BF783DD003232A2 /* Coordinator */,
 				724EDB181BE690FB009E80B1 /* Models */,
 				723C7B271BEE86A600188FEA /* Operations */,
@@ -284,8 +318,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720DF90B1BF8E6FF003232A2 /* DeviceListView.xib in Resources */,
 				724EDAE91BE67175009E80B1 /* Assets.xcassets in Resources */,
 				724EDAEC1BE67175009E80B1 /* MainMenu.xib in Resources */,
+				720DF90F1BF8F683003232A2 /* DeviceListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				724EDB1A1BE69107009E80B1 /* Runtime.swift in Sources */,
-				720DF9031BF78496003232A2 /* SimCtlOperations.swift in Sources */,
+				720DF9031BF78496003232A2 /* Operations.swift in Sources */,
+				720DF90D1BF8F395003232A2 /* DeviceListCellView.swift in Sources */,
 				724EDAE71BE67175009E80B1 /* AppDelegate.swift in Sources */,
+				720DF9051BF8E349003232A2 /* DeviceSelectionCoordinator.swift in Sources */,
 				724EDB1E1BE6C9A7009E80B1 /* TaskOperations.swift in Sources */,
 				724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */,
+				720DF9081BF8E6A2003232A2 /* DeviceListViewController.swift in Sources */,
+				720DF9111BF8F853003232A2 /* AppInstallationCoordinator.swift in Sources */,
 				724EDB111BE67653009E80B1 /* SimCtl.swift in Sources */,
 				724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */,
 				720DF9011BF783E9003232A2 /* ApplicationCoordinator.swift in Sources */,

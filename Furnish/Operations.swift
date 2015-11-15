@@ -28,3 +28,16 @@ struct SimCtlOperations {
         )
     }
 }
+
+struct InstrumentsOperations {
+    static let instrumentsPath = "/usr/bin/instruments"
+    static let arguments = ["-w"]
+
+    static func boot(udid: String, handler: TaskTerminationHandler) -> ReadOnlyTaskOperation {
+        return ReadOnlyTaskOperation(
+            path: instrumentsPath,
+            args: arguments + [udid],
+            handler: handler
+        )
+    }
+}
