@@ -20,7 +20,6 @@
 		724EDAEC1BE67175009E80B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 724EDAEA1BE67175009E80B1 /* MainMenu.xib */; };
 		724EDAF71BE67175009E80B1 /* FurnishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDAF61BE67175009E80B1 /* FurnishTests.swift */; };
 		724EDB021BE67175009E80B1 /* FurnishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB011BE67175009E80B1 /* FurnishUITests.swift */; };
-		724EDB111BE67653009E80B1 /* SimCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB101BE67653009E80B1 /* SimCtl.swift */; };
 		724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB131BE68578009E80B1 /* SimCtlListResponse.swift */; };
 		724EDB1A1BE69107009E80B1 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB191BE69107009E80B1 /* Runtime.swift */; };
 		724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724EDB1B1BE691CF009E80B1 /* Device.swift */; };
@@ -64,7 +63,6 @@
 		724EDAFD1BE67175009E80B1 /* FurnishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurnishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		724EDB011BE67175009E80B1 /* FurnishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnishUITests.swift; sourceTree = "<group>"; };
 		724EDB031BE67175009E80B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		724EDB101BE67653009E80B1 /* SimCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimCtl.swift; path = Classes/SimCtl.swift; sourceTree = "<group>"; };
 		724EDB131BE68578009E80B1 /* SimCtlListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimCtlListResponse.swift; path = Classes/SimCtlListResponse.swift; sourceTree = "<group>"; };
 		724EDB191BE69107009E80B1 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Classes/Runtime.swift; sourceTree = "<group>"; };
 		724EDB1B1BE691CF009E80B1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Classes/Device.swift; sourceTree = "<group>"; };
@@ -157,11 +155,11 @@
 		724EDAE51BE67175009E80B1 /* Furnish */ = {
 			isa = PBXGroup;
 			children = (
+				724EDB121BE68566009E80B1 /* Responses */,
 				720DF9061BF8E686003232A2 /* View Controllers */,
 				720DF8FF1BF783DD003232A2 /* Coordinator */,
 				724EDB181BE690FB009E80B1 /* Models */,
 				723C7B271BEE86A600188FEA /* Operations */,
-				724EDB0F1BE67639009E80B1 /* simctl wrapper */,
 				724EDAE61BE67175009E80B1 /* AppDelegate.swift */,
 				724EDAE81BE67175009E80B1 /* Assets.xcassets */,
 				724EDAEA1BE67175009E80B1 /* MainMenu.xib */,
@@ -186,15 +184,6 @@
 				724EDB031BE67175009E80B1 /* Info.plist */,
 			);
 			path = FurnishUITests;
-			sourceTree = "<group>";
-		};
-		724EDB0F1BE67639009E80B1 /* simctl wrapper */ = {
-			isa = PBXGroup;
-			children = (
-				724EDB121BE68566009E80B1 /* Responses */,
-				724EDB101BE67653009E80B1 /* SimCtl.swift */,
-			);
-			name = "simctl wrapper";
 			sourceTree = "<group>";
 		};
 		724EDB121BE68566009E80B1 /* Responses */ = {
@@ -355,7 +344,6 @@
 				724EDB141BE68578009E80B1 /* SimCtlListResponse.swift in Sources */,
 				720DF9081BF8E6A2003232A2 /* DeviceListViewController.swift in Sources */,
 				720DF9111BF8F853003232A2 /* AppInstallationCoordinator.swift in Sources */,
-				724EDB111BE67653009E80B1 /* SimCtl.swift in Sources */,
 				724EDB1C1BE691CF009E80B1 /* Device.swift in Sources */,
 				720DF9011BF783E9003232A2 /* ApplicationCoordinator.swift in Sources */,
 			);
