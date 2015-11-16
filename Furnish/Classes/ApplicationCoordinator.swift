@@ -17,15 +17,14 @@ final class ApplicationCoordinator: NSObject {
         return queue
     }()
 
-    var simulatorPopover: NSPopover?
     lazy var deviceSelectionCoordinator: DeviceSelectionCoordinator = {
         return DeviceSelectionCoordinator(selectionCallback: { (device, error) -> Void in
-            print("Selected device: \(device)")
             let bootTask = InstrumentsOperations.boot(device.identifier, handler: nil)
             self.operationQueue.addOperation(bootTask)
             self.appInstallationCoordinator = AppInstallationCoordinator(device: device)
         })
     }()
+    
     var appInstallationCoordinator: AppInstallationCoordinator?
 
     @IBAction func launchSimulator(button: NSButton) {
@@ -33,10 +32,10 @@ final class ApplicationCoordinator: NSObject {
     }
 
     @IBAction func installApplication(button: NSButton) {
-        guard let installationCoordintoar = appInstallationCoordinator else {
+        guard let installationCoordinator = appInstallationCoordinator else {
             return
         }
 
-        installationCoordintoar.present()
+        installationCoordinator.present()
     }
 }

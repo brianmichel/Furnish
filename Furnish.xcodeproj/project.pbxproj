@@ -94,14 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		720DF8FF1BF783DD003232A2 /* Coordinator */ = {
+		720DF8FF1BF783DD003232A2 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				720DF9001BF783E9003232A2 /* ApplicationCoordinator.swift */,
 				720DF9041BF8E349003232A2 /* DeviceSelectionCoordinator.swift */,
 				720DF9101BF8F853003232A2 /* AppInstallationCoordinator.swift */,
 			);
-			name = Coordinator;
+			name = Coordinators;
 			sourceTree = "<group>";
 		};
 		720DF9061BF8E686003232A2 /* View Controllers */ = {
@@ -157,7 +157,7 @@
 			children = (
 				724EDB121BE68566009E80B1 /* Responses */,
 				720DF9061BF8E686003232A2 /* View Controllers */,
-				720DF8FF1BF783DD003232A2 /* Coordinator */,
+				720DF8FF1BF783DD003232A2 /* Coordinators */,
 				724EDB181BE690FB009E80B1 /* Models */,
 				723C7B271BEE86A600188FEA /* Operations */,
 				724EDAE61BE67175009E80B1 /* AppDelegate.swift */,

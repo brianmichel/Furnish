@@ -65,8 +65,7 @@ class DeviceListViewController: NSViewController, NSTableViewDataSource, NSTable
             return nil
         }
 
-        let device = availableDevices[row]
-        cell.deviceName.stringValue = "\(device.name) (\(device.os.type) \(device.os.version))"
+        cell.device = availableDevices[row]
 
         return cell
     }
