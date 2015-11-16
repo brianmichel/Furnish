@@ -104,12 +104,12 @@
 			name = Coordinators;
 			sourceTree = "<group>";
 		};
-		720DF9061BF8E686003232A2 /* View Controllers */ = {
+		720DF9061BF8E686003232A2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				720DF9091BF8E6D0003232A2 /* Device List */,
 			);
-			name = "View Controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		720DF9091BF8E6D0003232A2 /* Device List */ = {
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				724EDB121BE68566009E80B1 /* Responses */,
-				720DF9061BF8E686003232A2 /* View Controllers */,
+				720DF9061BF8E686003232A2 /* Controllers */,
 				720DF8FF1BF783DD003232A2 /* Coordinators */,
 				724EDB181BE690FB009E80B1 /* Models */,
 				723C7B271BEE86A600188FEA /* Operations */,

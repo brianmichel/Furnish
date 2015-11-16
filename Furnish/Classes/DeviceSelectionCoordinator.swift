@@ -42,7 +42,7 @@ class DeviceSelectionCoordinator: NSObject, NSPopoverDelegate {
         }
 
         popover.contentViewController = deviceSelectionController
-        popover.contentSize = CGSizeMake(500, 300)
+        popover.contentSize = NSMakeSize(500, 300)
         popover.behavior = .Transient
         popover.delegate = delegate
 

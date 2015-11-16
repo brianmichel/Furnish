@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -669,25 +670,73 @@
         </menu>
         <window title="Furnish" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
-            <rect key="contentRect" x="618" y="366" width="302" height="316"/>
+            <rect key="contentRect" x="618" y="366" width="302" height="219"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ" customClass="NSVisualEffectView">
-                <rect key="frame" x="0.0" y="0.0" width="302" height="316"/>
+                <rect key="frame" x="0.0" y="0.0" width="302" height="219"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kld-xf-0Wp">
-                        <rect key="frame" x="89" y="124" width="125" height="68"/>
+                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="50" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkK-ly-huz">
+                        <rect key="frame" x="26" y="60.5" width="250" height="98"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="kld-xf-0Wp">
+                                <rect key="frame" x="-2" y="64" width="254" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="QU8-7K-IBJ"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Welcome to Furnish, begin by selecting a simulator to use, then install an app" id="zUX-YG-ksd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ay-zF-Re6">
+                                <rect key="frame" x="68" y="30" width="114" height="25"/>
+                                <animations/>
+                                <buttonCell key="cell" type="roundTextured" title="Select Simulator" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="652-Dp-sBa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="installApplication:" target="l6E-at-7t0" id="9M3-CY-j60"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uug-1Z-JdR">
+                                <rect key="frame" x="68" y="-2" width="114" height="25"/>
+                                <animations/>
+                                <buttonCell key="cell" type="roundTextured" title="Install App" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lxf-Or-jJf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="launchSimulator:" target="l6E-at-7t0" id="nhn-CK-vdl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="This is a really cool label, don't you think so?" id="zUX-YG-ksd">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                        <constraints>
+                            <constraint firstItem="Uug-1Z-JdR" firstAttribute="width" secondItem="5ay-zF-Re6" secondAttribute="width" id="NNd-Pc-LfM"/>
+                        </constraints>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <real value="1000"/>
+                            <real value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="KkK-ly-huz" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="XsA-Em-gEr"/>
+                    <constraint firstItem="KkK-ly-huz" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="YNi-Yq-bSv"/>
+                </constraints>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="160" y="315"/>
+            <point key="canvasLocation" x="31" y="262.5"/>
         </window>
         <customObject id="l6E-at-7t0" customClass="ApplicationCoordinator" customModule="Furnish" customModuleProvider="target"/>
     </objects>
