@@ -10,17 +10,12 @@ import AppKit
 
 final class ApplicationCoordinator: NSObject {
 
-    let operationQueue: NSOperationQueue = {
-        let queue = NSOperationQueue()
-        queue.name = "com.bsm.furnish.application"
-
-        return queue
-    }()
+    let queue = NSOperationQueue()
 
     lazy var deviceSelectionCoordinator: DeviceSelectionCoordinator = {
         return DeviceSelectionCoordinator(selectionCallback: { (device, error) -> Void in
             let bootTask = InstrumentsOperations.boot(device.identifier, handler: nil)
-            self.operationQueue.addOperation(bootTask)
+            self.queue.addOperation(bootTask)
             self.appInstallationCoordinator = AppInstallationCoordinator(device: device)
         })
     }()
@@ -36,6 +31,27 @@ final class ApplicationCoordinator: NSObject {
             return
         }
 
-        installationCoordinator.present()
+        installationCoordinator.present { [weak self] (task, error) -> Void in
+            guard let zelf = self else {
+                return
+            }
+
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if let _ = error {
+                    zelf.displayBanner("Uh oh", subtitle: "Something went wrong installing the app.")
+                }
+                else {
+                    zelf.displayBanner("Installation Complete", subtitle: "The application was successfully installed.")
+                }
+            })
+        }
+    }
+
+    private func displayBanner(title: String, subtitle: String) {
+        let userNotification = NSUserNotification()
+        userNotification.title = title
+        userNotification.subtitle = subtitle
+
+        NSUserNotificationCenter.defaultUserNotificationCenter().scheduleNotification(userNotification)
     }
 }

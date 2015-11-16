@@ -10,7 +10,11 @@ import AppKit
 
 class AppInstallationCoordinator {
 
+    typealias InstallationCompletionCallback = (NSTask, NSError?) -> Void
+
     private let device: Device
+
+    private var callback: InstallationCompletionCallback?
 
     private var openPanel: NSOpenPanel?
 
@@ -18,8 +22,10 @@ class AppInstallationCoordinator {
         self.device = device
     }
 
-    func present() {
+    func present(callback: InstallationCompletionCallback) {
         dismiss()
+
+        self.callback = callback
 
         openPanel = openPanelForSelection()
 
@@ -33,7 +39,6 @@ class AppInstallationCoordinator {
                 self?.installFilePackage(panel.URL)
             case NSFileHandlingPanelCancelButton: fallthrough
             default: break
-                // do nothing
             }
         })
     }
@@ -61,8 +66,10 @@ class AppInstallationCoordinator {
             return false
         }
 
-        let install = SimCtlOperations.install(path: absoluteFilePath, handler: { (task, data) -> Void in
-            print(task)
+        let install = SimCtlOperations.install(path: absoluteFilePath, handler: { [weak self] (task, data) -> Void in
+            if let callback = self?.callback {
+                callback(task, nil)
+            }
         })
 
         NSOperationQueue.mainQueue().addOperation(install)
@@ -75,7 +82,6 @@ class AppInstallationCoordinator {
             return false
         }
 
-        print("File URL: \(fileURL)")
         // more validation here
         return true
     }
