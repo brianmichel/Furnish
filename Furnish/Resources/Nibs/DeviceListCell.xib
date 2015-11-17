@@ -7,14 +7,14 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="DeviceListCell" id="8md-Np-6E6" customClass="DeviceListCell" customModule="Furnish" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="271" height="44"/>
+        <customView identifier="DeviceListCell" wantsLayer="YES" id="8md-Np-6E6" customClass="DeviceListCell" customModule="Furnish" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="271" height="17"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aau-RX-oaa">
-                    <rect key="frame" x="4" y="14" width="260" height="17"/>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aau-RX-oaa">
+                    <rect key="frame" x="-2" y="0.0" width="275" height="17"/>
                     <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="xhi-nb-7zV">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="xhi-nb-7zV">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -22,16 +22,16 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="aau-RX-oaa" secondAttribute="bottom" constant="14" id="EQ7-pz-JwQ"/>
-                <constraint firstItem="aau-RX-oaa" firstAttribute="leading" secondItem="8md-Np-6E6" secondAttribute="leading" constant="6" id="bec-jF-VIB"/>
-                <constraint firstAttribute="trailing" secondItem="aau-RX-oaa" secondAttribute="trailing" constant="9" id="gKQ-N8-1rU"/>
-                <constraint firstItem="aau-RX-oaa" firstAttribute="top" secondItem="8md-Np-6E6" secondAttribute="top" constant="13" id="uTO-LS-JkV"/>
+                <constraint firstItem="aau-RX-oaa" firstAttribute="top" secondItem="8md-Np-6E6" secondAttribute="top" id="SyT-Hd-kHV"/>
+                <constraint firstAttribute="trailing" secondItem="aau-RX-oaa" secondAttribute="trailing" id="VB3-lg-CBo"/>
+                <constraint firstItem="aau-RX-oaa" firstAttribute="leading" secondItem="8md-Np-6E6" secondAttribute="leading" id="qKP-qB-Bgi"/>
+                <constraint firstAttribute="bottom" secondItem="aau-RX-oaa" secondAttribute="bottom" id="s0a-BR-PS6"/>
             </constraints>
             <animations/>
             <connections>
                 <outlet property="deviceName" destination="aau-RX-oaa" id="KVL-6F-Q60"/>
             </connections>
-            <point key="canvasLocation" x="87.5" y="490"/>
+            <point key="canvasLocation" x="87.5" y="489.5"/>
         </customView>
     </objects>
 </document>

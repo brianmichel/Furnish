@@ -10,9 +10,9 @@ import AppKit
 
 final class ApplicationCoordinator: NSObject {
 
-    let queue = NSOperationQueue()
+    private let queue = NSOperationQueue()
 
-    lazy var deviceSelectionCoordinator: DeviceSelectionCoordinator = {
+    private lazy var deviceSelectionCoordinator: DeviceSelectionCoordinator = {
         return DeviceSelectionCoordinator(selectionCallback: { (device, error) -> Void in
             let bootTask = InstrumentsOperations.boot(device.identifier, handler: nil)
             self.queue.addOperation(bootTask)
@@ -20,7 +20,7 @@ final class ApplicationCoordinator: NSObject {
         })
     }()
     
-    var appInstallationCoordinator: AppInstallationCoordinator?
+    private var appInstallationCoordinator: AppInstallationCoordinator?
 
     @IBAction func launchSimulator(button: NSButton) {
         deviceSelectionCoordinator.present(fromView: button)

@@ -12,9 +12,9 @@ class DeviceSelectionCoordinator: NSObject, NSPopoverDelegate {
 
     typealias TaskTerminationHandler = (Device, NSError?) -> Void
 
-    var popover: NSPopover?
+    private var popover: NSPopover?
 
-    let callback: TaskTerminationHandler
+    private let callback: TaskTerminationHandler
 
     init(selectionCallback: TaskTerminationHandler) {
         callback = selectionCallback
@@ -25,7 +25,7 @@ class DeviceSelectionCoordinator: NSObject, NSPopoverDelegate {
 
         popover = deviceSelectionPopover(self)
 
-        popover?.showRelativeToRect(view.frame, ofView: view, preferredEdge: .MaxY)
+        popover?.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MaxY)
     }
 
     func dismiss() {
@@ -42,7 +42,7 @@ class DeviceSelectionCoordinator: NSObject, NSPopoverDelegate {
         }
 
         popover.contentViewController = deviceSelectionController
-        popover.contentSize = NSMakeSize(500, 300)
+        popover.contentSize = NSMakeSize(200, 100)
         popover.behavior = .Transient
         popover.delegate = delegate
 
