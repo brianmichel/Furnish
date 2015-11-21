@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15C27e" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -396,7 +395,7 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="50" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkK-ly-huz">
-                        <rect key="frame" x="26" y="60.5" width="250" height="98"/>
+                        <rect key="frame" x="26" y="60" width="250" height="98"/>
                         <subviews>
                             <textField horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="400" translatesAutoresizingMaskIntoConstraints="NO" id="kld-xf-0Wp">
                                 <rect key="frame" x="-2" y="64" width="254" height="34"/>
@@ -418,7 +417,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="installApplication:" target="l6E-at-7t0" id="9M3-CY-j60"/>
+                                    <action selector="launchSimulator:" target="l6E-at-7t0" id="gMu-66-U1X"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uug-1Z-JdR">
@@ -429,7 +428,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="launchSimulator:" target="l6E-at-7t0" id="nhn-CK-vdl"/>
+                                    <action selector="installApplication:" target="l6E-at-7t0" id="GfP-IQ-Q88"/>
                                 </connections>
                             </button>
                         </subviews>

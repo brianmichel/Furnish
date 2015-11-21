@@ -13,8 +13,7 @@ class DeviceListViewController: NSViewController, NSTableViewDataSource, NSTable
     struct Constants {
         static let DeviceCellIdentifier = "DeviceListCell"
         static let DeviceCellHeight: CGFloat = 35.0
-        static let DeviceHeightError: CGFloat = 200.0
-        static let DeviceWidth: CGFloat = 200.0
+        static let DeviceListSize = NSMakeSize(200, 100)
     }
 
     typealias DeviceSelectionCallback = (Device) -> Void
@@ -57,7 +56,6 @@ class DeviceListViewController: NSViewController, NSTableViewDataSource, NSTable
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let zelf = self {
                     zelf.tableView.reloadData()
-                    //zelf.preferredContentSize = zelf.calculateContentSize()
                 }
             })
         }
@@ -95,12 +93,4 @@ class DeviceListViewController: NSViewController, NSTableViewDataSource, NSTable
 
         return true
     }
-
-//    private func calculateContentSize() -> NSSize {
-//        guard let deviceCount = devices?.count else {
-//            return NSMakeSize(Constants.DeviceWidth, Constants.DeviceHeightError)
-//        }
-//
-//        return NSMakeSize(Constants.DeviceWidth, CGFloat(deviceCount) * Constants.DeviceCellHeight)
-//    }
 }
